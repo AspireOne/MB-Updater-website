@@ -12,25 +12,27 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #101013;
-    background-image: url("download.svg");
+    background-image: url("assets/artefact1.svg");
     background-repeat: no-repeat;
 }
-
 #description {
     display: flex;
     margin: 0em 10em 5em;
 }
-
 #description .description-box {
     flex-basis: 50em;
     margin: 2.5em;
 }
-
-ion-icon {vertical-align: center;}
-
-#description .description-box h1, .wrapper, ion-icon {transition: 0.35s;}
-#description .description-box:hover li, #description .description-box:hover p {color: #bcbfd2}
+ion-icon {
+    vertical-align: center;
+    padding-right: 10px;
+}
+#description .description-box h1, #description .description-box .wrapper, #description .description-box ion-icon {transition: 0.35s;}
 #description .description-box li, #description .description-box p {transition: 0.5s}
+#description .description-box li {margin-bottom: 0.2em;}
+#description .description-box .benefit-number {color: #e07979;}
+
+#description .description-box:hover li, #description .description-box:hover p {color: #bcbfd2}
 #description .description-box:hover .wrapper {transform: translateY(-0.5em);}
 #description .description-box:hover .wrapper #heart {color: #fd5151;}
 #description .description-box:hover .wrapper #settings {color: #8d8c8c;}
@@ -45,22 +47,11 @@ ion-icon {vertical-align: center;}
     vertical-align: top;
 }
 
-.wrapper {
+#description .description-box .wrapper {
     display: table;
     margin: 0 auto;
 }
-
-ion-icon {
-    padding-right: 10px;
-}
-
-#description .description-box li {
-    margin-bottom: 0.2em;
-}
-#description .description-box .benefit-number {
-    color: #e07979;
-}
-#description .description-box p, li {
+#description .description-box p, #description .description-box li {
     font-size: 1.2em;
     line-height: 1.4em;
     color: #999ba0;
@@ -71,14 +62,12 @@ ion-icon {
     margin-bottom: 5em;
     text-align: center;
 }
-
 #header h1 {
     font-size: 4.2em;
     font-weight: 500;
     margin-bottom: 0;
     font-family: "Varela", sans-serif;
 }
-
 #header h2 {
     font-size: 1.2em;
     font-family: 'Segoe UI', sans-serif;
@@ -87,12 +76,203 @@ ion-icon {
     margin-top: 2.5em;
     color: #bebec4;
 }
-
-#header-title-icon-div {
+#header #header-title-icon-div {
     margin-top: 9em;
 }
-
 #header img {
     width: 6em;
     margin-top: 2em;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #534f4f;
+    border-radius: 1em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #626262;
+}
+
+.bouncy {
+    animation:bouncy 5s infinite linear;
+    position:relative;
+}
+
+@keyframes bouncy {
+    0%{top:0em}
+    40%{top:0em}
+    43%{top:-0.9em}
+    46%{top:0em}
+    48%{top:-0.4em}
+    50%{top:0em}
+    100%{top:0em;}
+}
+
+.button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.button1 a {
+    width: 100%;
+    max-width: 240px;
+    height: 54px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #ff4655;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    position: relative;
+    margin: 10px 0;
+}
+.button1 a.white:hover > p {
+    color: #ece8e1;
+}
+.button1 a.white > p {
+    background: #ece8e1;
+    color: #0f1923;
+}
+.button1 a.white > p span.base {
+    border: 1px solid transparent;
+}
+.button1 a.transparent:hover > p {
+    color: #ece8e1;
+}
+.button1 a.transparent:hover > p span.text {
+    box-shadow: 0 0 0 1px #ece8e1;
+}
+.button1 a.transparent > p {
+    background: #0f1923;
+    color: #ece8e1;
+}
+.button1 a.transparent > p span.base {
+    border: 1px solid #ece8e1;
+}
+.button1 a:after, .button1 a:before {
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 8px;
+    background: #0f1923;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.button1 a:before {
+    right: 0;
+    left: initial;
+}
+.button1 a p {
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.button1 a p span.base {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border: 1px solid #ff4655;
+}
+.button1 a p span.base:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    left: -1px;
+    top: -1px;
+    background: #0f1923;
+    position: absolute;
+    transition: 0.3s ease-out all;
+}
+.button1 a p span.bg {
+    left: -5%;
+    position: absolute;
+    background: #ff4655;
+    width: 0;
+    height: 100%;
+    z-index: 3;
+    transition: 0.3s ease-out all;
+    transform: skewX(-10deg);
+}
+.button1 a p span.text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+.button1 a p span.text:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    right: 0;
+    bottom: 0;
+    background: #0f1923;
+    position: absolute;
+    transition: 0.3s ease-out all;
+    z-index: 5;
+}
+.button1 a:hover {
+    color: #ece8e1;
+}
+.button1 a:hover span.bg {
+    width: 110%;
+}
+.button1 a:hover span.text:after {
+    background: #ece8e1;
+}
+
+
+
+
+footer {
+    text-align: center;
+    /*display: inline-block;*/
+    width: 100%;
+    color: #898992;
+    display: flex;
+    flex-direction: column;
+}
+footer #bottom {margin: auto 1em 0 1em;}
+footer #bottom-icons {display: inline-block;}
+footer #bottom #copyright {
+    color: #777780;
+    font-size: 0.9em;
+}
+footer #bottom .bottom-icon {
+    margin: 0 auto;
+    float: left;
+    filter: invert(0.57);
+}
+footer #bottom .bottom-icon:hover {filter: invert(0.85);}
+footer #bottom .bottom-icon img {
+    width: 2.24em;
+    alignment: center;
+    margin: 0 1em;
 }

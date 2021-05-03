@@ -1,15 +1,15 @@
-window.onload = function () {
-    AOS.init();
-    if (!isTouchDevice())
-        window.addEventListener("mousemove", e => handleMouseMove(e));
-}
-
-const tilt = 7;
-const delay = 150;
+const tilt = 4;
+const delay = 100;
 let transX = 0;
 let transY = 0;
 let cachedX = {max: 0, middle: 0, divisor: 0};
 let cachedY = {max: 0, middle: 0, divisor: 0};
+
+window.onload = function() {
+    AOS.init();
+    if (!isTouchDevice())
+        window.addEventListener("mousemove", e => handleMouseMove(e));
+}
 
 function handleMouseMove(e) {
     let newTransX = computeTransform(cachedX, getWindowWidth(), e.clientX, tilt);
