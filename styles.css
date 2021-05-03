@@ -1,0 +1,98 @@
+/*html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}*/
+
+body {
+    color: #dddff1;
+    font-family: -apple-system, BlinkMacSystemFont, "Varela Round", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #101013;
+    background-image: url("download.svg");
+    background-repeat: no-repeat;
+}
+
+#description {
+    display: flex;
+    margin: 0em 10em 5em;
+}
+
+#description .description-box {
+    flex-basis: 50em;
+    margin: 2.5em;
+}
+
+ion-icon {vertical-align: center;}
+
+#description .description-box h1, .wrapper, ion-icon {transition: 0.35s;}
+#description .description-box:hover li, #description .description-box:hover p {color: #bcbfd2}
+#description .description-box li, #description .description-box p {transition: 0.5s}
+#description .description-box:hover .wrapper {transform: translateY(-0.5em);}
+#description .description-box:hover .wrapper #heart {color: #fd5151;}
+#description .description-box:hover .wrapper #settings {color: #8d8c8c;}
+#description .description-box:hover .wrapper #star {color: #ffe066;}
+
+#description .description-box h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 0;
+    font-family: "Varela", sans-serif;
+    display: inline;
+    vertical-align: top;
+}
+
+.wrapper {
+    display: table;
+    margin: 0 auto;
+}
+
+ion-icon {
+    padding-right: 10px;
+}
+
+#description .description-box li {
+    margin-bottom: 0.2em;
+}
+#description .description-box .benefit-number {
+    color: #e07979;
+}
+#description .description-box p, li {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    color: #999ba0;
+    text-align: justify;
+}
+
+#header {
+    margin-bottom: 5em;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 4.2em;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-family: "Varela", sans-serif;
+}
+
+#header h2 {
+    font-size: 1.2em;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 390;
+    font-style: italic;
+    margin-top: 2.5em;
+    color: #bebec4;
+}
+
+#header-title-icon-div {
+    margin-top: 9em;
+}
+
+#header img {
+    width: 6em;
+    margin-top: 2em;
+}
