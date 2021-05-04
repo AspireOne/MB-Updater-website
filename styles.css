@@ -14,7 +14,8 @@ body {
     background-color: #0e0e11;
     background-image: url("assets/artefact1.svg");
     background-repeat: no-repeat;
-    overflow-x: hidden;
+    overflow: hidden;
+    -ms-overflow-x: hidden;
 }
 
 #description {
