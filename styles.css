@@ -11,27 +11,46 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #101013;
+    background-color: #0e0e11;
     background-image: url("assets/artefact1.svg");
     background-repeat: no-repeat;
 }
+
 #description {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
-    margin: 0em 10em 5em;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 82em;
+    margin: 7em auto auto;
+}
+@media (max-width: 82em) {
+
 }
 #description .description-box {
-    flex-basis: 50em;
-    margin: 2.5em;
+    flex: 1 0 0;
+    flex-shrink: 0;
+    margin: 3em 2.5em;
+    min-width: 22em;
+    max-width: 22em;
 }
 ion-icon {
     vertical-align: center;
     padding-right: 10px;
 }
+
 #description .description-box h1, #description .description-box .wrapper, #description .description-box ion-icon {transition: 0.35s;}
 #description .description-box li, #description .description-box p {transition: 0.5s}
 #description .description-box li {margin-bottom: 0.2em;}
-#description .description-box .benefit-number {color: #e07979;}
+#description .description-box ul {list-style-type: none; padding: 0;}
 
+#description .description-box .benefit-number {color: #e07979;}
 #description .description-box:hover li, #description .description-box:hover p {color: #bcbfd2}
 #description .description-box:hover .wrapper {transform: translateY(-0.5em);}
 #description .description-box:hover .wrapper #heart {color: #fd5151;}
@@ -47,10 +66,10 @@ ion-icon {
     vertical-align: top;
 }
 
-#description .description-box .wrapper {
+/*#description .description-box .wrapper {
     display: table;
     margin: 0 auto;
-}
+}*/
 #description .description-box p, #description .description-box li {
     font-size: 1.2em;
     line-height: 1.4em;
@@ -62,12 +81,39 @@ ion-icon {
     margin-bottom: 5em;
     text-align: center;
 }
-#header h1 {
+#header h1/*, #header span*/ {
+    display: inline-block;
     font-size: 4.2em;
     font-weight: 500;
     margin-bottom: 0;
     font-family: "Varela", sans-serif;
+
+    animation: flow 17s ease-in-out infinite;
+    background: linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
+    background: -webkit-linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+/* If you wanted to separate the words. */
+/*#header span {
+    animation: flow 9s ease-in-out infinite;
+    background: linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
+    background: -webkit-linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}*/
+
+@keyframes flow {
+    0% {background-position: 0 50%;}
+    50% {background-position: 100% 50%}
+    100% {background-position: 0% 50%}
+}
+
 #header h2 {
     font-size: 1.2em;
     font-family: 'Segoe UI', sans-serif;
@@ -77,11 +123,12 @@ ion-icon {
     color: #bebec4;
 }
 #header #header-title-icon-div {
-    margin-top: 9em;
+    margin-top: 5em;
 }
 #header img {
     width: 6em;
     margin-top: 2em;
+    opacity: 0.85;
 }
 
 /* width */
@@ -109,6 +156,18 @@ ion-icon {
     animation:bouncy 5s infinite linear;
     position:relative;
 }
+
+.unselectable {
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -webkit-user-drag: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -o-user-select: none;
+     user-select: none;
+     user-drag: none;
+ }
 
 @keyframes bouncy {
     0%{top:0em}
@@ -248,31 +307,83 @@ ion-icon {
     background: #ece8e1;
 }
 
-
-
-
 footer {
+    margin-top: 10em;
     text-align: center;
-    /*display: inline-block;*/
     width: 100%;
     color: #898992;
     display: flex;
     flex-direction: column;
 }
-footer #bottom {margin: auto 1em 0 1em;}
-footer #bottom-icons {display: inline-block;}
+footer #bottom .bottom-icon ion-icon {
+    padding: 0.11em 0.41em;
+    color: #a5a5a5;
+    zoom: 1.11;
+    transition: color 0.11s;
+}
+footer #bottom .bottom-icon:hover ion-icon {
+    color: #e8e9f5;
+}
 footer #bottom #copyright {
     color: #777780;
     font-size: 0.9em;
+    margin-bottom: 6px;
 }
-footer #bottom .bottom-icon {
-    margin: 0 auto;
-    float: left;
-    filter: invert(0.57);
+
+.horizontal-line {
+    border-bottom: 1px solid #ffffff;
+    /*border-top: 1px solid #ffffff;*/
+    opacity: 0.2;
+    border-radius: 3em;
+    width: 80%;
+    margin: auto;
+    height: 0px;
 }
-footer #bottom .bottom-icon:hover {filter: invert(0.85);}
-footer #bottom .bottom-icon img {
-    width: 2.24em;
-    alignment: center;
-    margin: 0 1em;
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: rgba(40, 43, 49, 0.1);
+    color: #d3d5de;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -5.7em;
+    opacity: 0;
+    transition: opacity 0.4s;
+    padding: 3px 11px;
+    width: 10em;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.artefact {
+    position: absolute;
+    z-index: -1;
+}
+
+#artefact2 {
+    filter: invert(15%);
 }

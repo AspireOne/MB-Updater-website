@@ -1,25 +1,42 @@
 const tilt = 4;
-const delay = 100;
+const delay = 0;
 let transX = 0;
 let transY = 0;
 let cachedX = {max: 0, middle: 0, divisor: 0};
 let cachedY = {max: 0, middle: 0, divisor: 0};
 
 window.onload = function() {
-    AOS.init();
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+
     if (!isTouchDevice())
-        window.addEventListener("mousemove", e => handleMouseMove(e));
+        window.addEventListener("mousemove", e => handleMouseMove(e.clientX, e.clientY));
 }
 
-function handleMouseMove(e) {
-    let newTransX = computeTransform(cachedX, getWindowWidth(), e.clientX, tilt);
-    let newTransY = computeTransform(cachedY, getWindowHeight(), e.clientY, tilt);
+document.addEventListener('mouseenter', function() {
+    const effectDurationMs = 110;
+    document.getElementById("header-icon").style.transition = effectDurationMs/1000 + "s";
+    setTimeout(function() {
+        document.getElementById("header-icon").style.transition = "0s";
+    }, effectDurationMs + 50);
+});
 
-    setTimeout(() => {
+function handleMouseMove(x, y) {
+    let newTransX = computeTransform(cachedX, getWindowWidth(), x, tilt);
+    let newTransY = computeTransform(cachedY, getWindowHeight(), y, tilt);
+
+    if (delay == 0)
+        applyChange();
+    else
+        setTimeout(() => applyChange(), delay);
+
+    function applyChange() {
         transX = newTransX;
         transY = newTransY;
-        document.getElementById("header-icon").style = `transform: translate(${transX}px, ${transY}px)`;
-    }, delay);
+        document.getElementById("header-icon").style.transform = `translate(${transX}px, ${transY}px)`;
+    }
 
     function computeTransform(cached, max, mousePos, maxTilt) {
         const stays = cached.max === max;
