@@ -1,4 +1,4 @@
-const tilt = 4;
+const tilt = 6;
 const delay = 0;
 let transX = 0;
 let transY = 0;
