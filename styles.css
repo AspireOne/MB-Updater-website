@@ -31,6 +31,7 @@ body {
     flex-wrap: wrap;
     max-width: 82em;
     margin: 7em auto auto;
+    border-bottom: 1px #29292f solid;
 }
 @media (max-width: 82em) {
 
@@ -336,16 +337,6 @@ footer #bottom #copyright {
     color: #777780;
     font-size: 0.9em;
     margin-bottom: 6px;
-}
-
-.horizontal-line {
-    border-bottom: 1px solid #ffffff;
-    /*border-top: 1px solid #ffffff;*/
-    opacity: 0.2;
-    border-radius: 3em;
-    margin: auto;
-    height: 0px;
-    max-width: 77em;
 }
 
 .tooltip {
