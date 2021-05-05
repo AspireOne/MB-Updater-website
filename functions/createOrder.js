@@ -1,6 +1,6 @@
 'use strict';
 const paypal = require("@paypal/checkout-server-sdk");
-const paypalClient = (require('netlify/functions/paypalClient')).client();
+const paypalClient = (require('functions/paypalClient')).client();
 
 exports.handler = async (event, context) => {
     // Call PayPal to set up a transaction.

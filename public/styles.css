@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #0e0e11;
-    background-image: url("assets/artefact1.svg");
+    background-image: url("public/assets/artefact1.svg");
     background-repeat: no-repeat;
     overflow-x: hidden;
     -ms-overflow-x: hidden;

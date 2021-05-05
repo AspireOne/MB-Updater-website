@@ -2,7 +2,7 @@
   "name": "Mimibazar Aktualizace",
   "version": "1.0.0",
   "description": "Zjednodušte si aktualizaci položek na mimibazaru.",
-  "main": "script.js",
+  "main": "public/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
