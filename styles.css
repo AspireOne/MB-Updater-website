@@ -48,17 +48,17 @@ ion-icon {
     padding-right: 10px;
 }
 
-#description .description-box h1, #description .description-box .wrapper, #description .description-box ion-icon {transition: 0.35s;}
+#description .description-box h1, #description .description-box .description-box-icon-title-wrapper, #description .description-box ion-icon {transition: 0.35s;}
 #description .description-box li, #description .description-box p {transition: 0.5s}
 #description .description-box li {margin-bottom: 0.2em;}
 #description .description-box ul {list-style-type: none; padding: 0;}
 
 #description .description-box .benefit-number {color: #e07979;}
 #description .description-box:hover li, #description .description-box:hover p {color: #bcbfd2}
-#description .description-box:hover .wrapper {transform: translateY(-0.5em);}
-#description .description-box:hover .wrapper #heart {color: #fd5151;}
-#description .description-box:hover .wrapper #settings {color: #8d8c8c;}
-#description .description-box:hover .wrapper #star {color: #ffe066;}
+#description .description-box:hover .description-box-icon-title-wrapper {transform: translateY(-0.5em);}
+#description .description-box:hover .description-box-icon-title-wrapper #heart {color: #fd5151;}
+#description .description-box:hover .description-box-icon-title-wrapper #settings {color: #8d8c8c;}
+#description .description-box:hover .description-box-icon-title-wrapper #star {color: #ffe066;}
 
 #description .description-box h1 {
     text-align: center;
@@ -91,9 +91,9 @@ ion-icon {
     margin-bottom: 0;
     font-family: "Varela", sans-serif;
 
-    animation: flow 17s ease-in-out infinite;
-    background: linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
-    background: -webkit-linear-gradient(-60deg, #3ce7ab, #904e95, #c25050, #f3a3a3);
+    animation: flow 11s ease-in-out infinite;
+    background: linear-gradient(-60deg, #33cbad, #904e95, #c25050, #4e51ff);
+    background: -webkit-linear-gradient(-60deg, #33cbad, #904e95, #c25050, #4e51ff);
     background-size: 300%;
 
     -webkit-background-clip: text;
@@ -112,9 +112,10 @@ ion-icon {
 }*/
 
 @keyframes flow {
-    0% {background-position: 0 50%;}
-    50% {background-position: 100% 50%}
-    100% {background-position: 0% 50%}
+    /* It would normally be 0%, 100%, 0%, but we substract a few percent because otherwise the start and stop is too long */
+    0%   {background-position: 5% 50%}
+    50%  {background-position: 95% 50%}
+    100% {background-position: 5% 50%}
 }
 
 #header h2 {
@@ -188,132 +189,28 @@ ion-icon {
     100%{top:0em;}
 }
 
-.button1 {
-    display: flex;
+#download-buttons {
     align-items: center;
     justify-content: center;
-    flex-flow: column;
 }
-.button1 a {
-    width: 100%;
-    max-width: 240px;
-    height: 54px;
-    padding: 8px;
-    font-size: 0.8rem;
-    font-weight: 900;
-    color: #ff4655;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
-    position: relative;
-    margin: 10px 0;
-}
-.button1 a.white:hover > p {
-    color: #ece8e1;
-}
-.button1 a.white > p {
-    background: #ece8e1;
-    color: #0f1923;
-}
-.button1 a.white > p span.base {
-    border: 1px solid transparent;
-}
-.button1 a.transparent:hover > p {
-    color: #ece8e1;
-}
-.button1 a.transparent:hover > p span.text {
-    box-shadow: 0 0 0 1px #ece8e1;
-}
-.button1 a.transparent > p {
-    background: #0f1923;
-    color: #ece8e1;
-}
-.button1 a.transparent > p span.base {
-    border: 1px solid #ece8e1;
-}
-.button1 a:after, .button1 a:before {
-    content: "";
-    width: 1px;
-    position: absolute;
-    height: 8px;
-    background: #0f1923;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.button1 a:before {
-    right: 0;
-    left: initial;
-}
-.button1 a p {
-    margin: 0;
-    height: 54px;
-    line-height: 54px;
-    box-sizing: border-box;
-    z-index: 1;
-    left: 0;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-.button1 a p span.base {
-    box-sizing: border-box;
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    border: 1px solid #ff4655;
-}
-.button1 a p span.base:before {
-    content: "";
-    width: 2px;
-    height: 2px;
-    left: -1px;
-    top: -1px;
-    background: #0f1923;
-    position: absolute;
-    transition: 0.3s ease-out all;
-}
-.button1 a p span.bg {
-    left: -5%;
-    position: absolute;
-    background: #ff4655;
-    width: 0;
-    height: 100%;
-    z-index: 3;
-    transition: 0.3s ease-out all;
-    transform: skewX(-10deg);
-}
-.button1 a p span.text {
-    z-index: 4;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+
+#download-section {
+    margin-left: 20%;
+    width: 40%;
+    border: 1px solid #b6b6b6;
+    border-radius: 1em;
+    padding: 1em;
     font-size: 1.2em;
 }
-.button1 a p span.text:after {
-    content: "";
-    width: 4px;
-    height: 4px;
-    right: 0;
-    bottom: 0;
-    background: #0f1923;
-    position: absolute;
-    transition: 0.3s ease-out all;
-    z-index: 5;
-}
-.button1 a:hover {
-    color: #ece8e1;
-}
-.button1 a:hover span.bg {
-    width: 110%;
-}
-.button1 a:hover span.text:after {
-    background: #ece8e1;
+
+.button {
+    color: white;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em 3em;
 }
 
 footer {
@@ -328,7 +225,6 @@ footer #bottom .bottom-icon ion-icon {
     padding: 0.11em 0.41em;
     color: #a5a5a5;
     zoom: 1.11;
-    transition: color 0.11s;
 }
 footer #bottom .bottom-icon:hover ion-icon {
     color: #e8e9f5;

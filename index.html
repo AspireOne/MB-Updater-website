@@ -5,6 +5,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQN1i9He6fWQzuidoUR_D76ZDV1NY5FIVUphp590YseHf1txz1G5yGr9txTCChcNLnpfcoahDPcXaRcp&currency=CZK"></script>
     <script src="script.js"></script>
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -48,22 +49,28 @@
 
 <body>
 <noscript>Je třeba povolit Javascript - tato stránka bez něj nemůže fungovat.</noscript>
+
+<!-- Set up a container element for the button -->
+<div id="paypal-button-container"></div>
+
+
+
+
 <img class="artefact" id="artefact2" src="assets/artefact2.svg"/>
 <section id="header">
     <div id="header-title-icon-div">
         <h1 data-aos="fade-down" data-aos-duration="1100">Mimibazar Aktualizace</h1>
-        <span></span>
+        <!--<span></span>-->
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
             Aplikace na zjednodušení a automatizaci aktualizací na mimibazar.cz
         </h2>
     </div>
-    <img src="assets/app_icon.svg" alt="ikona aplikace" unselectable="on" class="unselectable" draggable="false" id="header-icon">
-    <!--data-aos="fade" data-aos-duration="2000" data-aos-delay="400" -->
+    <img src="assets/app_icon.svg" id="header-icon" alt="ikona aplikace" unselectable="on" class="unselectable" draggable="false" id="header-app-icon">
 </section>
 
 <section id="description">
-    <section id="features" class="description-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-        <div class="wrapper">
+    <section id="description-features" class="description-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+        <div class="description-box-icon-title-wrapper">
             <ion-icon item-start name="heart" size="large" id="heart"></ion-icon>
             <h1>Jaká skvělá funkce!</h1>
         </div>
@@ -75,7 +82,7 @@
     </section>
 
     <section id="benefits" class="description-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="750">
-        <div class="wrapper">
+        <div class="description-box-icon-title-wrapper">
             <ion-icon item-start name="star" size="large" id="star"></ion-icon>
             <h1>Výhody</h1>
         </div>
@@ -89,7 +96,7 @@
     </section>
 
     <section id="workings" class="description-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="850">
-        <div class="wrapper">
+        <div class="description-box-icon-title-wrapper">
             <ion-icon item-start name="settings" size="large" id="settings"></ion-icon>
             <h1>Jak to funguje?</h1>
         </div>
@@ -101,14 +108,30 @@
     </section>
 </section>
 
-<section id="download">
-
+<section id="download-section">
+    <h1>To zní dobře. Jak začnu?</h1>
+    <p>
+        1. Nainstalujte si aplikaci<br>2. v nastavení se přihlašte<br>3. hotovo!
+    </p>
+    <p>
+        Aplikaci si můžete zdarma vyzkoušet na 7 dní. Po uplynutí zkušební lhůty je nutné si ji jednorázově
+        zakoupit. Zkušební i plná verze zahrnují všechny funkce, podporu, a budoucí aktualizace.
+    </p>
+    <p>
+        Po zakoupení dostanete aplikaci, která slouží jako klíč. Stačí si ji nainstalovat, a ona dá
+    </p>
+    <div id="download-buttons">
+        <a href="https://github.com/AspireOne/mimibazar-updater/releases/latest/download/updater.apk"
+           class="button" id="download-button" data-aos="fade-left" data-aos-anchor-placement="top-bottom"
+           data-aos-duration="800" data-aos-delay="550">
+            Stáhnout
+        </a>
+        <a href="#" class="button" id="purchase-button"
+           data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800" data-aos-delay="550">
+            Zakoupit
+        </a>
+    </div>
 </section>
-<div class="button1" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
-    <!--<a class="white" href="#"><p><span class="bg"></span><span class="base"></span><span class="text">Play Valorant</span></p></a>
-    <a class="transparent" href="#"><p><span class="bg"></span><span class="base"></span><span class="text">Play Valorant</span></p></a>-->
-    <a href="https://github.com/AspireOne/mimibazar-updater/releases/latest/download/updater.apk"><p><span class="bg"></span><span class="base"></span><span class="text">Stáhnout</span></p></a>
-</div>
 
 
 <footer>
