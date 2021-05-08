@@ -30,10 +30,11 @@ async function createOrder(client) {
     request.prefer('return=minimal');
     request.requestBody({
         intent: 'CAPTURE',
+        application_context: { shipping_preference: "NO_SHIPPING" },
         purchase_units: [{
             amount: {
                 currency_code: 'CZK',
-                value: '49.99'
+                value: '79.99'
             }
         }]
     });

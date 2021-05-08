@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AspireOne/mimibazar-updater-website#readme",
   "dependencies": {
-    "@paypal/checkout-server-sdk": "^1.0.2"
+    "@paypal/checkout-server-sdk": "^1.0.2",
+    "faunadb": "^4.2.0"
   }
 }

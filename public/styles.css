@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #0e0e11;
-    background-image: url("public/assets/artefact1.svg");
+    background-image: url("assets/artefact1.svg");
     background-repeat: no-repeat;
     overflow-x: hidden;
     -ms-overflow-x: hidden;
@@ -40,7 +40,6 @@ body {
     flex: 1 0 0;
     flex-shrink: 0;
     margin: 3em 2.5em;
-    min-width: 22em;
     max-width: 22em;
 }
 ion-icon {
@@ -189,15 +188,36 @@ ion-icon {
     100%{top:0em;}
 }
 
-#download-buttons {
-    align-items: center;
-    justify-content: center;
+#download_section_buttons {
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.download-section-button {
+
+}
+
+#paypal-button-container {
+
+}
+
+#download-button {
+    margin-right: 2em;
+    background-color: #FFC439;
+    color: #000318;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 0;
+    border-radius: 4px;
+}
+
 
 #download-section {
     margin-left: 20%;
     width: 40%;
     border: 1px solid #b6b6b6;
+    margin-top: 3.5em;
     border-radius: 1em;
     padding: 1em;
     font-size: 1.2em;
