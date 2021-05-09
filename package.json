@@ -2,7 +2,8 @@
   "name": "Mimibazar Aktualizace",
   "version": "1.0.0",
   "description": "Zjednodušte si aktualizaci položek na mimibazaru.",
-  "main": "public/script.js",
+  "main": "public/scripts/main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/AspireOne/mimibazar-updater-website#readme",
   "dependencies": {
-    "@paypal/checkout-server-sdk": "^1.0.2",
     "faunadb": "^4.2.0"
+  },
+  "devDependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2"
   }
 }

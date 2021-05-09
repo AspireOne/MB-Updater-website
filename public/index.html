@@ -5,8 +5,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
-    <script data-page-type="checkout" src="https://www.paypal.com/sdk/js?client-id=sb&currency=CZK&commit=true&buyer-country=CZ&debug=true&intent=capture"></script>
-    <script src="script.js"></script>
+    <script data-page-type="checkout" src="https://www.paypal.com/sdk/js?client-id=sb&currency=CZK&commit=true&buyer-country=CZ&intent=capture"></script>
+    <script type="module" src="scripts/main.js"></script>
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
@@ -62,72 +62,86 @@
 </section>
 
 <section id="description">
-    <section id="description-features" class="description-box" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-        <div class="description-box-icon-title-wrapper">
-            <ion-icon item-start name="heart" size="large" id="heart"></ion-icon>
-            <h1>Jaká skvělá funkce!</h1>
-        </div>
-        <p>
-            Aktualizujte libovolný počet položek jedním klikem, nebo si nechte položky aktualizovat každý den
-            automaticky
-            v určitý čas. Tato aplikace představuje konec hodinám stráveným úmorným manuálním odklikáváním aktualizací.
-        </p>
-    </section>
+    <div class="description-box-wrapper" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+        <section id="description-features" class="description-box">
+            <div class="description-box-icon-title-wrapper">
+                <ion-icon item-start name="heart" size="large" id="heart"></ion-icon>
+                <h1>Jaká skvělá funkce!</h1>
+            </div>
+            <p>
+                Aktualizujte libovolný počet položek jedním klikem, nebo si nechte položky aktualizovat každý den
+                automaticky
+                v určitý čas. Tato aplikace představuje konec hodinám stráveným úmorným manuálním odklikáváním aktualizací.
+            </p>
+        </section>
+    </div>
 
-    <section id="benefits" class="description-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="750">
-        <div class="description-box-icon-title-wrapper">
-            <ion-icon item-start name="star" size="large" id="star"></ion-icon>
-            <h1>Výhody</h1>
-        </div>
-        <ul>
-            <li><span class="benefit-number">#1</span> Zapnutím automatických aktualizací předejdete tomu, abyste jakýkoli den prošvihli.</li>
-            <li><span class="benefit-number">#2</span> Výběrem času, ve kterém jsou uživatelé aktivní, zvýšíte svůj dosah, a tedy i své prodeje.</li>
-            <li><span class="benefit-number">#3</span> Budete moci rovnoměrně proaktualizovat celý sortiment.</li>
-            <li><span class="benefit-number">#4</span> Budete mít o starost méně :)</li>
-            </li>
-        </ul>
-    </section>
+    <div class="description-box-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="750">
+        <section id="description-benefits" class="description-box">
+            <div class="description-box-icon-title-wrapper">
+                <ion-icon item-start name="star" size="large" id="star"></ion-icon>
+                <h1>Výhody</h1>
+            </div>
+            <ul>
+                <li><span class="benefit-number">#1</span> Zapnutím automatických aktualizací předejdete tomu, abyste jakýkoli den prošvihli.</li>
+                <li><span class="benefit-number">#2</span> Výběrem času, ve kterém jsou uživatelé aktivní, zvýšíte svůj dosah, a tedy i své prodeje.</li>
+                <li><span class="benefit-number">#3</span> Budete moci rovnoměrně proaktualizovat celý sortiment.</li>
+                <li><span class="benefit-number">#4</span> Budete mít o starost méně :)</li>
+                </li>
+            </ul>
+        </section>
+    </div>
 
-    <section id="workings" class="description-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="850">
-        <div class="description-box-icon-title-wrapper">
-            <ion-icon item-start name="settings" size="large" id="settings"></ion-icon>
-            <h1>Jak to funguje?</h1>
-        </div>
-        <p>
-            Řekněme, že si nastavíte, že chcete pravidelně aktualizovat prvních 120 položek, a denně jich můžete
-            aktualizovat 40.<br>
-            První aktualizaci budou aktualizovány položky 1 - 40, druhou 40 - 80, třetí 80 - 120, čtvrtou 1 - 40...
-        </p>
-    </section>
-</section>
-
-<section id="download-section">
-    <h1>To zní dobře. Jak začnu?</h1>
-    <p>
-        1. Nainstalujte si aplikaci<br>2. v nastavení se přihlašte<br>3. hotovo!
-    </p>
-    <p>
-        Aplikaci si můžete zdarma vyzkoušet na 7 dní. Po uplynutí zkušební lhůty je nutné si ji jednorázově
-        zakoupit. Zkušební i plná verze zahrnují všechny funkce, podporu, a budoucí aktualizace.
-    </p>
-    <p>
-        Po zakoupení dostanete aplikaci, která slouží jako klíč. Stačí si ji nainstalovat, a ona dá
-    </p>
-    <div id="download_section_buttons" data-aos="fade" data-aos-anchor-placement="top-bottom">
-        <div id="download-button-container">
-            <a href="https://github.com/AspireOne/mimibazar-updater/releases/latest/download/updater.apk"
-               class="button download-section-button" id="download-button">
-                Stáhnout
-            </a>
-        </div>
-        <!-- Set up a container element for PayPal's button -->
-        <div id="paypal-button-container" class="download-section-button"></div>
-        <!--<a href="#" class="button" id="purchase-button"
-           data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800" data-aos-delay="550">
-            Zakoupit
-        </a>-->
+    <div class="description-box-wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="850">
+        <section id="description-workings" class="description-box">
+            <div class="description-box-icon-title-wrapper">
+                <ion-icon item-start name="settings" size="large" id="settings"></ion-icon>
+                <h1>Jak to funguje?</h1>
+            </div>
+            <p>
+                Řekněme, že si nastavíte, že chcete pravidelně aktualizovat prvních 120 položek, a denně jich můžete
+                aktualizovat 40.<br>
+                První aktualizaci budou aktualizovány položky 1 - 40, druhou 40 - 80, třetí 80 - 120, čtvrtou 1 - 40...
+            </p>
+        </section>
     </div>
 </section>
+
+<div id="download-section-app-screenshots-wrapper">
+    <section id="download-section" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
+        <h1>To zní dobře. Jak začnu?</h1>
+        <p>
+            1. Nainstalujte si aplikaci<br>2. v nastavení se přihlašte<br>3. hotovo!
+        </p>
+        <p>
+            Aplikaci si můžete zdarma vyzkoušet na 7 dní. Po uplynutí zkušební lhůty je nutné si ji jednorázově
+            zakoupit. Zkušební i plná verze zahrnují všechny funkce, podporu, a budoucí aktualizace.
+        </p>
+        <p>
+            Po zakoupení dostanete klíč, který stačí jednoduše vložit do aplikace a aktivuje se vám plná verze.
+        </p>
+        <div id="download_section_buttons" data-aos="fade" data-aos-anchor-placement="top-bottom">
+            <div id="download-button-container">
+                <a href="https://github.com/AspireOne/mimibazar-updater/releases/latest/download/updater.apk"
+                   class="button shine download-section-button" id="download-button">
+                    Stáhnout
+                </a>
+            </div>
+            <!-- Set up a container element for PayPal's button -->
+            <div id="paypal-button-container" class="download-section-button"></div>
+            <!--<a href="#" class="button" id="purchase-button"
+               data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800" data-aos-delay="550">
+                Zakoupit
+            </a>-->
+        </div>
+    </section>
+    <div id="app-screenshots">
+        <div id="app-screenshots-inner-wrapper">
+            <img src="assets/mainscreen_light.png" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom" data-aos-delay="500">
+            <img src="assets/settings_dark.png" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom" data-aos-delay="1000">
+        </div>
+    </div>
+</div>
 
 
 <footer>

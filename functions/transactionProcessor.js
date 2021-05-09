@@ -34,7 +34,7 @@ async function createOrder(client) {
         purchase_units: [{
             amount: {
                 currency_code: 'CZK',
-                value: '79.99'
+                value: '69.99'
             }
         }]
     });
