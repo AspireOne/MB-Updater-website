@@ -1,0 +1,28 @@
+{
+  "name": "mimi",
+  "version": "1.0.0",
+  "description": "Mimibazar updater website",
+  "private": true,
+  "dependencies": {
+    "aos": "^2.3.4"
+  },
+  "devDependencies": {
+    "imagemin-cli": "^6.0.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AspireOne/mimibazar-updater-website.git"
+  },
+  "author": "Matěj 'AspireOne' Pešl <matejpesl1@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AspireOne/mimibazar-updater-website/issues"
+  },
+  "homepage": "https://github.com/AspireOne/mimibazar-updater-website#readme"
+}
