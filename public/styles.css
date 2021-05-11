@@ -220,6 +220,7 @@ ion-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 700px) {
@@ -231,11 +232,10 @@ ion-icon {
 
 #app-screenshots img {
     width: 15.7em;
+    margin-bottom: 3em;
     /*border: 1px #4f219a solid;*/
-}
-
-#app-screenshots img:first-child {
-    margin-right: 3em;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 #download_section_buttons {
