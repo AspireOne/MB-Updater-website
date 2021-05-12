@@ -6,8 +6,10 @@ export default function setUp() {
             return fetch('/.netlify/functions/transactionProcessor?orderAction=create', {
                 method: 'post'
             }).then(function(functionResponse) {
+                console.log("order created");
                 return functionResponse.json();
             }).then(function(functionResponseJson) {
+                console.log("returning id");
                 return functionResponseJson.id;
             });
         },
