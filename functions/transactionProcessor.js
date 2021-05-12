@@ -1,4 +1,3 @@
-'use strict';
 const paypal = require('@paypal/checkout-server-sdk');
 /* Returns PayPal HTTP client instance with environment that has access credentials context.
    Use this instance to invoke PayPal APIs, provided the credentials have access. */
@@ -9,6 +8,7 @@ const environment = () => process.env.SANDBOX
     : new paypal.core.LiveEnvironment(process.env.LIVE_CLIENT_ID, process.env.LIVE_CLIENT_SECRET);
 
 exports.handler = async (event, context) => {
+    console.log("sandbox: " + process.env.SANDBOX);
     const orderAction = event.queryStringParameters.orderAction;
     const orderId = event.queryStringParameters.orderID;
 
@@ -39,9 +39,8 @@ async function createOrder(client) {
         }]
     });
 
-    let serverResponse;
     try {
-        serverResponse = await client.execute(request);
+        const serverResponse = await client.execute(request);
         console.log('order successfuly created');
         // Return a successful serverResponse to the client with the order ID.
         return { statusCode: 200, body: JSON.stringify({ serverResponse: serverResponse, id: serverResponse.result.id }) }

@@ -4,10 +4,10 @@
   "description": "Mimibazar updater website",
   "private": true,
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
     "aos": "^2.3.4"
   },
   "devDependencies": {
-    "imagemin-cli": "^6.0.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0"
   },
