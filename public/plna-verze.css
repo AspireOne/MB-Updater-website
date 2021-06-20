@@ -1,0 +1,35 @@
+#plna-verze h1 {
+    font-weight: 1;
+    font-family: Open-Sans, sans-serif;
+    text-align: center;
+    font-size: 2.8em;
+    color: #ffffff;
+    margin: 0.2em 0.2em 3em;
+}
+
+@media (max-width: 1000px) {
+    #plna-verze {
+        width: 100% !important;
+    }
+}
+
+#plna-verze p {
+    font-family: Varela, sans-serif;
+    font-size: 1.5em;
+}
+
+#plna-verze #key-big {
+    font-size: 5em;
+    font-weight: 1;
+    font-family: 'Roboto', sans-serif;
+}
+
+#plna-verze .key, #plna-verze #email {
+    color: #f3d4d4;
+}
+
+#plna-verze {
+    width: 60%;
+    text-align: center;
+    margin-top: 7em;
+}

@@ -94,8 +94,8 @@ ion-icon {
     font-family: "Varela", sans-serif;
 
     animation: flow 11s ease-in-out infinite;
-    background: linear-gradient(-60deg, #33cbad, #904e95, #c25050, #4e51ff);
-    background: -webkit-linear-gradient(-60deg, #33cbad, #904e95, #c25050, #4e51ff);
+    background: linear-gradient(-60deg, #33cbad, #9e54a3, #cd5555, #4e51ff);
+    background: -webkit-linear-gradient(-60deg, #33cbad, #97529c, #cb5555, #4e51ff);
     background-size: 300%;
 
     -webkit-background-clip: text;

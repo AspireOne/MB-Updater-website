@@ -24,14 +24,6 @@ export default function setUp() {
             }).then(function(functionResponseJson) {
                 const appKey = functionResponseJson.key;
                 const transaction = functionResponseJson.serverResponse.result;
-                const transactionInfo = {
-                    status: transaction.status,
-                    payerName: transaction.payer.name.given_name,
-                    payerSurname: transaction.payer.name.surname,
-                    payerMail: transaction.payer.email_address,
-                }
-                console.log("transaction captured. Transaction info: " + JSON.stringify(transactionInfo));
-
                 const errorDetail = Array.isArray(transaction.details) && transaction.details[0];
 
                 if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED')
@@ -46,8 +38,10 @@ export default function setUp() {
                     return alert(msg); // Show a failure message.
                 }
 
-                // Show a success message.
-                alert('Transakce úspěšně dokončena uživatelem ' + transactionInfo.payerName + " " + transactionInfo.payerSurname);
+                window.localStorage.setItem("email", transaction.payer.email_address);
+                window.localStorage.setItem("klic", appKey);
+
+                window.open("/plna-verze","_self");
             });
         }
 

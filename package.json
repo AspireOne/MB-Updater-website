@@ -5,7 +5,10 @@
   "private": true,
   "dependencies": {
     "@paypal/checkout-server-sdk": "^1.0.2",
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "faunadb": "^4.3.0",
+    "netlify-cli": "^3.37.37",
+    "nodemailer": "^6.6.2"
   },
   "devDependencies": {
     "webpack": "^5.36.2",

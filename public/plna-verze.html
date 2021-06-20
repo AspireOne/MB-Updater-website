@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plná verze zakoupena! - Aplikace Mimibazar Aktualizace</title>
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="plna-verze.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- meta: Main -->
+    <meta charset="utf-8">
+    <meta name="author" content="Matěj Pešl">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Mimibazar Aktualizace" content="Aplikace na zjednodušení a automatickou aktualizaci položek na mimibazar.cz">
+    <meta name="title" content="Mimibazar Aktualizace — Nechte si položky aktualizovat automaticky!">
+    <meta name="description" content="Zjednodušení a automatická aktualizace položek na mimibazar.cz!">
+    <meta name="keywords" content="mimibazar, aktualizace, automaticky, položky, aplikace, aktualizování, položek,
+    automatické, samo, samy, bazar, aktualizovat, topovat, aktualizování, zaktualizovat, auto, ráno">
+    <!-- meta: Favicon related -->
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#000000">
+    <!-- meta: Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mimibazar-aktualizace.netlify.app/">
+    <meta property="og:title" content="Mimibazar Aktualizace — Nechte si položky aktualizovat automaticky">
+    <meta property="og:description" content="Aplikace na zjednodušení a automatickou aktualizaci položek na mimibazar.cz">
+    <meta property="og:image" content="mimibazar-aktualizace.netlify.app/favicons/android-chrome-512x512">
+    <!-- meta: Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mimibazar-aktualizace.netlify.app/">
+    <meta property="twitter:title" content="Mimibazar Aktualizace — Nechte si položky aktualizovat automaticky">
+    <meta property="twitter:description" content="Aplikace na zjednodušení a automatickou aktualizaci položek na mimibazar.cz">
+    <meta property="twitter:image" content="mimibazar-aktualizace.netlify.app/favicons/android-chrome-512x512">
+</head>
+<body id="plna-verze">
+<h1>Plná verze Mimibazar Aktualizací byla úspěšně zakoupena!</h1>
+<h2>Váš klíč je <span id="key-big" class="key"></span></h2>
+<h2>Jeho kopie byla zaslána na <span id="email"></span></h2>
+
+<script>
+    const key = localStorage.getItem("klic");
+    const email = localStorage.getItem("email");
+
+    console.log("klíč: " + key);
+    console.log("email: " + email);
+
+    if (key === null || email === null)
+        window.open("/index.html", "_self");
+
+    Array.from(document.getElementsByClassName("key")).forEach((elem) => elem.innerHTML = key);
+    document.getElementById("email").innerText = email;
+</script>
+</body>
+</html>
