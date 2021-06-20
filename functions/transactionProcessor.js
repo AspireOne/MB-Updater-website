@@ -2,7 +2,7 @@ const paypal = require('@paypal/checkout-server-sdk');
 const nodemailer = require("nodemailer");
 const faunadb = require('faunadb')
 const q = faunadb.query;
-const sandbox = true;
+const sandbox = false;
 
 // Set up and return PayPal JavaScript SDK environment with PayPal access credentials.
 const environment = () => sandbox ? new paypal.core.SandboxEnvironment(process.env.SANDBOX_CLIENT_ID, process.env.SANDBOX_CLIENT_SECRET) : new paypal.core.LiveEnvironment(process.env.LIVE_CLIENT_ID, process.env.LIVE_CLIENT_SECRET);
