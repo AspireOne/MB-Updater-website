@@ -1,23 +1,23 @@
 export default function setUp() {
     paypal.Buttons({
-        // Call your server to set up the transaction
+        // Call your server to set up the transaction.
         createOrder: function(data, actions) {
-            console.log("creating order");
+            console.log("Calling server to create Order.");
             return fetch('/.netlify/functions/transactionProcessor?orderAction=create', {
-                method: 'post'
+                method: 'post',
             }).then(function(functionResponse) {
-                console.log("order created");
+                console.log("Server Created Order.");
                 return functionResponse.json();
             }).then(function(functionResponseJson) {
-                console.log("returning id");
+                console.log("Order Id: " + functionResponseJson.id);
                 return functionResponseJson.id;
             });
         },
 
         // Call your server to finalize the transaction.
-        onApprove: function(id, actions) {
-            console.log("capturing (finalizing) transaction.");
-            return fetch('/.netlify/functions/transactionProcessor?orderAction=capture&orderID=' + id.orderID, {
+        onApprove: function(data, actions) {
+            console.log("capturing (finalizing) transaction with id: " + data.orderID);
+            return fetch('/.netlify/functions/transactionProcessor?orderAction=capture&orderID=' + data.orderID, {
                 method: 'post'
             }).then(function(functionResponse) {
                 return functionResponse.json();
