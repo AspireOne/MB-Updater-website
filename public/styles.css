@@ -82,6 +82,12 @@ ion-icon {
     text-align: justify;
 }
 
+#key {
+    font-size: 1.4em;
+    display: none;
+    color: #c2a4a4;
+}
+
 #header {
     margin-bottom: 5em;
     text-align: center;
