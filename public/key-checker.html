@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        const keyToCheck = window.location.hash.substr(1);
+        if (!keyToCheck || !keyToCheck.length || keyToCheck.length !== 4) {
+            document.write("invalid");
+        } else {
+            fetch('/.netlify/functions/debug?key=' + keyToCheck, {method: 'post'})
+                .then((response) => {
+                    if (response.ok)
+                        return response.json();
+
+                    throw new Error("invalid key");
+                })
+                .then((body) => document.write(body.valid))
+                .catch(() => document.write("invalid"))
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
