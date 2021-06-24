@@ -1,4 +1,4 @@
-const faunadb = require('faunadb')
+const faunadb = require('faunadb');
 const q = faunadb.query;
 
 exports.handler = async(event, context) => {
@@ -6,7 +6,7 @@ exports.handler = async(event, context) => {
     const keyToCheck = event.queryStringParameters.key;
 
     if (!keyToCheck || !keyToCheck.length || keyToCheck.length !== 4)
-        return { statusCode: 400, body: JSON.stringify({error: "invalid key format"}) }
+        return { statusCode: 400, body: JSON.stringify({response: "invalid_key"}) }
 
     const expr = q.Map(
         q.Paginate(q.Documents(q.Collection('keys'))),

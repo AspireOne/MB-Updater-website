@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        const keyToCheck = window.location.hash.substr(1);
+        const keyToCheck = getQueryVariable("key");
         if (!keyToCheck || !keyToCheck.length || keyToCheck.length !== 4) {
             document.write("invalid");
         } else {
-            fetch('/.netlify/functions/debug?key=' + keyToCheck, {method: 'post'})
+            fetch('/.netlify/functions/keyChecker?key=' + keyToCheck, {method: 'post'})
                 .then((response) => {
                     if (response.ok)
                         return response.json();
@@ -16,6 +16,17 @@
                 })
                 .then((body) => document.write(body.valid))
                 .catch(() => document.write("invalid"))
+        }
+
+        function getQueryVariable(variable) {
+            const query = window.location.search.substring(1);
+            const vars = query.split("&");
+
+            for (let i = 0; i < vars.length; ++i) {
+                const pair = vars[i].split("=");
+                if(pair[0] == variable)
+                    return pair[1];
+            }
         }
     </script>
 </head>
